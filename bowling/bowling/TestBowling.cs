@@ -20,5 +20,23 @@ namespace bowling
             }
             Assert.That(g.GetFinalScore(), Is.EqualTo(0));
         }
+        [Test]
+        public void AddTwoScore()
+        {
+            Game g = new Game();
+            g.SetPins(2);
+            g.SetPins(3);
+            Assert.That(g.GetFinalScore(), Is.EqualTo(5));
+        }
+        [Test]
+        public void AllHit()
+        {
+            Game g = new Game();
+            g.SetPins(10);
+            // next
+            g.SetPins(2);
+            g.SetPins(5);
+            Assert.That(g.GetFinalScore(), Is.EqualTo(17));
+        }
     }
 }

@@ -7,14 +7,22 @@ namespace bowling
 {
     class Game
     {
-        internal void SetPins(int p)
-        {
-            throw new NotImplementedException();
-        }
+        private int pin = 0;
+        private int score = 0;
+        private bool allHit = false;
 
-        internal int GetFinalScore()
+        public void SetPins(int p)
         {
-            throw new NotImplementedException();
+            if (p == 10) allHit = true;
+            this.pin = p;
+        }
+        public int GetFinalScore()
+        {
+            return this.score;
+        }
+        private int PinToScore()
+        {
+            if(allHit)
         }
     }
 }
